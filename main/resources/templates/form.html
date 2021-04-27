@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title th:text="${titulo}">TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2 th:text="${titulo}"></h2>
+        <fieldset style="width: 270px;">
+            <legend th:text="${subtitulo}"></legend>
+            <form action="#" method="post" th:object="${tarea}">
+                <label for="descripcion">Descripción: </label>
+                <input id="descripcion" type="text" th:field="*{descripcion}" />
+                <br><br>
+                <label for="fecha">Fecha: </label>
+                <input id="fecha" type="date" th:field="*{descripcion}" />
+                <br><br>
+                <input type="submit" value="Guardar" />
+                <input type="button" value="Cancelar" onclick="location.href='/tareas'" />
+            </form>
+        </fieldset>
+    </body>
+</html>
